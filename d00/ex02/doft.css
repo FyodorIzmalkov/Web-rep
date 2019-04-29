@@ -1,0 +1,9 @@
+body{
+	background-color: #505050;
+}
+.wrapper{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 80px 200px;
+	grid-gap: 10px;
+}
