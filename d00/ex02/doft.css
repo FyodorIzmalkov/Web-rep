@@ -170,3 +170,21 @@ button{
 #wtf{
 	text-shadow: 0.9vw 0.2vw 0.18vw #DC143C;
 }
+
+#ikea{
+	width: 7vw;
+	height: 10.5vw;
+	float: right;
+	margin-top: -13vw;
+	margin-right: 29vw;
+	position: relative;
+}
+
+#apple{
+	width: 9.5vw;
+	height: 8.2vw;
+	float: right;
+	margin-top: -13.5vw;
+	margin-right: 1.5vw;
+	position: relative;
+}
