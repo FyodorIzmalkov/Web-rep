@@ -160,3 +160,7 @@ p{
 button{
 	font-size: 0.8vw;
 }
+
+#wtf{
+	text-shadow: 1vw 0.2vw 0.2vw #DC143C;
+}
