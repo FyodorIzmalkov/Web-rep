@@ -1,0 +1,66 @@
+.mendeleev_photo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15vw;
+}
+
+.element{
+    margin: 5px;
+    font-weight: bold;
+    font-size: 2.1vw;
+    text-align: center;
+}
+.number{
+    vertical-align: bottom;
+    font-size:0.8vw;
+    text-align: left;
+}
+.weight{
+    vertical-align: top;
+    font-size:0.7vw;
+    text-align: right;
+}
+.reactive_nonmetal{
+    background-color: #ffff80;
+}
+.noble_gas{
+    background-color: #99ffff;
+}
+.alkali_metal{
+    background-color: #ff4d4d;
+}
+.alkaline_earth_metal{
+    background-color: #ffd9b3;
+}
+.metalloid{
+    background-color: #cccc99;
+}
+.metal{
+    background-color: #cccccc;
+}
+.transition_metal{
+    background-color: #ffb3b3;
+}
+.lanthanide{
+    background-color: #ffb3ff;
+}
+.actinide{
+    background-color: #ff80bf;
+}
+.unkown_propertites{
+    background-color: #f0f0f0;
+}
+
+table{
+    border: 3px solid black;
+    width: 90%;
+    height: 70%;
+}
+td{
+    max-width: auto;
+    max-height: auto;
+}
+p{
+    margin:2px;
+}
