@@ -1,10 +1,15 @@
+html, body{
+    background-color: #ccffff;
+}
+
 /* Dropdown Button */
 .dropbtn{
     background-color: #4CAF50;
-    color: white;
+    color: black;
     padding: 1vw;
     font-size: 1vw;
-    border: none;
+    min-width: 10vw;
+    border: solid black 0.08vw;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -13,29 +18,95 @@
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content{
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 5vw;
-    box-shadow: 0vw 1vw 2vw 0vw rgba(0,0,0,0.2);
-    z-index: 1  ;
+.dropdown-apples{
+    position: relative;
+    display: inline-block;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a{
+.dropdown-fish{
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.sandwiches-content a{
     color: black;
+    font-size: 0.7vw;
     padding: 1vw 1.3vw;
     text-decoration: none;
+    border: solid green 0.07vw;
     display: block;
 }
 
+.apples-content a{
+    color: black;
+    font-size: 0.7vw;
+    padding: 1vw 1.3vw;
+    text-decoration: none;
+    border: solid red 0.07vw;
+    display: block;
+}
+
+.fish-content a{
+    color: black;
+    font-size: 0.7vw;
+    padding: 1vw 1.3vw;
+    text-decoration: none;
+    border: solid blue 0.07vw;
+    display: block;
+}
+
+.sandwiches-content{
+    display: none;
+    position: absolute;
+    background-color: #80ff80;
+    border: solid green 0.07vw;
+    min-width: 10vw;
+    box-shadow: 0vw 1vw 2vw 1vw rgba(0,0,0,0.3);
+    z-index: 1  ;
+}
+
+.apples-content{
+    display: none;
+    position: absolute;
+    background-color: #ffb3b3;
+    border: solid red 0.07vw;
+    min-width: 10vw;
+    box-shadow: 0vw 1vw 2vw 1vw rgba(0,0,0,0.3);
+    z-index: 1  ;
+}
+
+.fish-content{
+    display: none;
+    position: absolute;
+    background-color: #99c2ff;
+    border: solid blue 0.07vw;
+    min-width: 10vw;
+    box-shadow: 0vw 1vw 2vw 1vw rgba(0,0,0,0.3);
+    z-index: 1  ;
+}
+
+#apples{
+    background-color: #ff4d4d;
+}
+/* Links inside the dropdown */
+
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.sandwiches-content a:hover {background-color: #1ee61e;}
+.apples-content a:hover {background-color: #ff8080;}
+.fish-content a:hover {background-color: #2a77eb}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .sandwiches-content {display: block;}
+.dropdown-apples:hover .apples-content {display: block;}
+.dropdown-fish:hover .fish-content{display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown-apples:hover  #apples {background-color: #ee2525;}
+.dropdown-fish:hover #fish {background-color: #0257d7;}
+
+
+#fish{
+    background-color: #0066ff;
+}
