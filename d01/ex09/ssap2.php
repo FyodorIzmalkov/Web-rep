@@ -28,12 +28,21 @@ if ($argc > 1)
         return 0;
     }
 
+    function ft_strlen($str)
+    {
+        $i = 0;
+        while ($str[$i] != ''){
+            $i++;
+        }
+        return $i;
+    }
+
     function ft_sort($a, $b)
     {
         $first = strtolower($a);
         $second = strtolower($b);
-        $flen = strlen($first);
-        $slen = strlen($second);
+        $flen = ft_strlen($first);
+        $slen = ft_strlen($second);
         $i = 0;
         while ($i < $flen && $i < $slen)
         {
