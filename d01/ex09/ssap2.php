@@ -2,59 +2,61 @@
 <?PHP
 if ($argc > 1)
 {
-    $i = 1;
-    $array = array();
-    while ($i < $argc)
+    function ft_connect_argv($argv, $argc)
     {
-        $temp = array_filter(explode(" ", $argv[$i]));
-        $array = array_merge($array, $temp);
-        $i++;
+        $i = 1;
+        while ($i < $argc)
+        {
+            $result .= " ".$argv[$i]." ";
+            $i++;
+        }
+        return $result;
     }
 
-function ft_symbol_check($a)
-{
-    if (!is_numeric($a[0]) && ($a[0] < chr(97) || $a[0] > chr(122)))
-        return 1;
-    return 0;
-}
-
-function ft_other_check($a, $b)
-{
-    if (ft_symbol_check($a) && !ft_symbol_check($b))
-        return 1;
-    if (!ft_symbol_check($a) && ft_symbol_check($b))
-        return -1;
-    return 0;
-}
-
-function ft_sort($a, $b)
-{
-    $first = strtolower($a);
-    $second = strtolower($b);
-    $flen = strlen($first);
-    $slen = strlen($second);
-    $i = 0;
-    if ($first == $second)
-        return 0;
-    $check = ft_other_check($first, $second);
-    if ($check != 0)
-        return $check == -1 ? -1 : 1;
-    if (is_numeric($first[0]) && (!is_numeric($second[0])))
-        return 1;
-    if ((!is_numeric($first[0])) && is_numeric($second[0]))
-        return -1;
-    while ($i < $flen && $i < $slen)
+    function ft_clean_spaces($array)
     {
-        if ($first[$i] < $second[$i])
-            return -1;
-        else
+        $str = trim($array);
+        while ((strpos($str, "  ") == true))
+            $str = str_replace("  ", " ", $str);
+        return $str;
+    }
+
+    function ft_symbol_check($a, $i)
+    {
+        if (!is_numeric($a[$i]) && ($a[$i] < chr(97) || $a[$i] > chr(122)))
             return 1;
-        $i++;
+        return 0;
     }
-    return (1);
-}
 
+    function ft_sort($a, $b)
+    {
+        $first = strtolower($a);
+        $second = strtolower($b);
+        $flen = strlen($first);
+        $slen = strlen($second);
+        $i = 0;
+        while ($i < $flen && $i < $slen)
+        {
+            if ((ft_symbol_check($first, $i) == 1) && (ft_symbol_check($second, $i) == 0))
+                return 1;
+            if  ((ft_symbol_check($first, $i) == 0) && (ft_symbol_check($second, $i) == 1))
+                return -1;
+            if (is_numeric($first[$i]) && (!is_numeric($second[$i])))
+                return 1;
+            if ((!is_numeric($first[$i])) && is_numeric($second[$i]))
+                return -1;
+            if ($first[$i] < $second[$i])
+                return -1;
+            if ($first[$i] > $second[$i])
+                return 1;
+            $i++;
+        }
+        return (0);
+    }
 
+    $array = ft_connect_argv($argv, $argc);
+    $array = ft_clean_spaces($array);
+    $array = explode(" ", $array);
     usort($array, "ft_sort");
     foreach ($array as $elem)
     {
