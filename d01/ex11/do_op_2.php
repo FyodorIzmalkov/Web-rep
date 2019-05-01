@@ -88,6 +88,8 @@ else
         $array = array_filter($array);
     if ($count != 2)
         ft_exit();
+    if (($op == "/" || $op == "%") && $array[1] == 0)
+        ft_exit();
     if ($op == "+")
         echo $array[0] + $array[1]."\n";
     if ($op == "-")
