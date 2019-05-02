@@ -221,8 +221,5 @@ if ($argc > 1)
 	// $this_year_secs = ft_get_seconds_this_year($time, $days_and_month[1], $array[1], $array[3]);
 	// $seconds += $this_year_secs;
 	// //$seconds = ($array[3] - 1970) * 365.25 * 24 * 60 * 60;
-	print_r($time);
-	print_r($array);
-	print_r($days_and_month);
-	echo $seconds;
+	echo $seconds."\n";
 }
