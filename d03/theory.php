@@ -38,3 +38,20 @@ The HEAD method is defined and made so that the server returns the headers exact
 way it would do for a GET, but without a body. It means that you may see a 
 Content-Length: in the response headers, but there must not be an actual body in the 
 HEAD response.
+
+HTTP Authentication is the ability to tell the server your username and password so 
+that it can verify that you're allowed to do the request you're doing. The Basic 
+authentication used in HTTP (which is the type curl uses by default) 
+is *plain* *text* based, which means it sends username and password only 
+slightly obfuscated, but still fully readable by anyone that sniffs on the 
+network between you and the remote server.
+
+To tell curl to use a user and password for authentication:
+
+ curl --user name:password http://www.example.com
+
+ $_SERVER is an array containing information such as headers, paths, and script locations. 
+ The entries in this array are created by the web server. There is no guarantee that every 
+ web server will provide any of these; servers may omit some, or provide others not 
+ listed here. That said, a large number of these variables are accounted for in 
+ the » CGI/1.1 specification, so you should be able to expect those.
