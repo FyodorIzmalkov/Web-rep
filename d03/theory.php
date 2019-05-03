@@ -28,4 +28,13 @@ curl 'localhost:8100'
 
               If this option is used several times, the last one will be used.
 
-              Users very often want to both read cookies from a file and write updated cookies back to a file, so using both -b, --cookie and -c, --cookie-jar in the same command line is common.
+			  Users very often want to both read cookies from a file and write updated cookies back to a file, so using both -b, --cookie and -c, --cookie-jar in the same command line is common.
+			  
+You can ask the remote server for ONLY the headers by using the --head (-I) option which 
+will make curl issue a HEAD request. In some special cases servers deny the HEAD method 
+while others still work, which is a particular kind of annoyance.
+
+The HEAD method is defined and made so that the server returns the headers exactly the 
+way it would do for a GET, but without a body. It means that you may see a 
+Content-Length: in the response headers, but there must not be an actual body in the 
+HEAD response.
