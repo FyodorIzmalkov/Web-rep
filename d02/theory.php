@@ -57,6 +57,8 @@ $	assert end of subject or before a terminating newline (or end of line, in mult
 
 
 \s  any whitespace character
+\d any decimal digit
+\w any "word" character
 
 
 // packing
