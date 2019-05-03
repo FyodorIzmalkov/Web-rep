@@ -13,14 +13,16 @@ while ($line = fgets($fd))
 
 	function ft_get2($matches)
 	{
-		return preg_replace_callback("/\".*?\"/s", "ft_to_upper", $matches[0]);
+		return preg_replace_callback("/\".*?\"/", "ft_to_upper", $matches[0]);
 	}
 
 	function ft_get($matches){
 		$innate = preg_replace_callback("/>.*?</s", "ft_to_upper", $matches[0]);
-		return preg_replace_callback("/<a .*?title=\".*?\"/s", "ft_get2",$innate);
+		$f = preg_replace_callback("/(<a )(.*?)(>)(.*)(title=\".*?\")/s", "ft_get2",$innate);
+		return preg_replace_callback("/<a .*? title=\".*?\">/s", "ft_get2", $f);
+
 	}
 
 $result = preg_replace_callback("/(<a .*?<\/a>)/s", "ft_get", $page);
-   if ($result !== "")
-   	echo $result."\n";;
+     if ($result !== "")
+     	echo $result."\n";
