@@ -10,11 +10,18 @@ class News{
 
 		if ($id)
 		{
-			$host = 'localhost:8100';
-			$dbname = 'dbname';
-			$user = 'root';
-			$password = '12345';
-			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+			// $host = 'localhost:8100';
+			// $dbname = 'dbname';
+			// $user = 'root';
+			// $password = '12345';
+			// $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+
+			$db = Db::getConnection();
+			
+			$result = $db->query('SELECT * from news WHERE id=' . $id);
+			$result->setFetchMode(PDO::FETCH_ASSOC);
+			$newsItem = $result->fetch();
+			return $newsItem;
 		}
 	}
 
@@ -23,11 +30,12 @@ class News{
 	{
 		//запрос к БД
 
-		$host = 'localhost:8100';
-		$dbname = 'dbname';
-		$user = 'root';
-		$password = '12345';
-		$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+		// $host = 'localhost:8100';
+		// $dbname = 'dbname';
+		// $user = 'root';
+		// $password = '12345';
+		// $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+		$db = Db::getConnection();
 
 		$newsList = array();
 

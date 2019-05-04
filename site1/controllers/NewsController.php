@@ -7,11 +7,7 @@ class NewsController{
 	{
 		$newsList = array();
 		$newsList = News::getNewsList();
-
-		echo "<pre>";
-		print_r($newsList);
-		echo "</pre>";
-
+		require_once(ROOT.'/views/news/index.php');
 		return true;
 	}
 
@@ -20,7 +16,7 @@ class NewsController{
 		if ($id)
 		{
 			$newsItem = News::getNewsItemById($id);
-
+			require_once(ROOT.'/views/news/index.php');
 			echo "<pre>";
 			print_r($newsItem);
 			echo "</pre>";

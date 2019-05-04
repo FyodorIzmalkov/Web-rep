@@ -28,6 +28,7 @@ class Router{
 			// сравниваем $uriPattern и $uri
 			if (preg_match("~$uriPattern~", $uri))
 			{
+				echo "\n\n\n".gethostname();
 				// получаем внутренний путь из внешнего
 				$internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 				// определить какой контроллер и action обрабатывают запрос
