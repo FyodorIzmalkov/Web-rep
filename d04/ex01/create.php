@@ -1,5 +1,5 @@
 <?php
-$folder_name = "../htdocs/private";
+$folder_name = "htdocs/private";
 $filename = "/passwd";
 	if ($_POST['login'] && $_POST['passwd'] && $_POST['submit'] === "OK")
 	{
