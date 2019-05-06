@@ -1,4 +1,4 @@
-CREATE TABLE ft_table(
+CREATE TABLE db_lsandor.ft_table(
 	`id` INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	`login` VARCHAR(8) NOT NULL DEFAULT 'toto',
 	`group` ENUM('staff', 'student', 'other') NOT NULL,

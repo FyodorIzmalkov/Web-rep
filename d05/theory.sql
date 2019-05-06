@@ -49,3 +49,6 @@ SELECT столбцы FROM таблица WHERE условие;
 SELECT * FROM movies WHERE title LIKE '%остров%';
 UPDATE movies SET 'release' = '2017' WHERE title = 'Логан';	
 DELETE FROM movies WHERE id = 2;
+
+mysql -u username -p database_name < file.sql
+mysql -u root -p  -h localhost db_lsandor < d05/ex03/ex03.sql
