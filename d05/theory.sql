@@ -52,3 +52,6 @@ DELETE FROM movies WHERE id = 2;
 
 mysql -u username -p database_name < file.sql
 mysql -u root -p  -h localhost db_lsandor < d05/ex03/ex03.sql
+
+The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) 
+to group the result-set by one or more columns.
