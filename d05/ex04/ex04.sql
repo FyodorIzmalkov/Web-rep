@@ -1,2 +1,1 @@
-SELECT 'creation_date' FROM db_lsandor.ft_tables
-WHERE id > 5 AND 
+UPDATE db_lsandor.ft_table SET creation_date = DATE_ADD(creation_date, INTERVAL 20 YEAR) WHERE id > 5;
