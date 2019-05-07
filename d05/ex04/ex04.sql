@@ -1,1 +1,1 @@
-UPDATE db_lsandor.ft_table SET creation_date = DATE_ADD(creation_date, INTERVAL 20 YEAR) WHERE id > 5;
+UPDATE `db_lsandor-`.ft_table SET creation_date = DATE_ADD(creation_date, INTERVAL 20 YEAR) WHERE id > 5;

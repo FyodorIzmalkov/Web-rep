@@ -1,1 +1,1 @@
-CREATE DATABASE db_lsandor;
+CREATE DATABASE `db_lsandor-`;
