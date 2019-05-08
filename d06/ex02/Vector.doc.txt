@@ -1,0 +1,29 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class handles 3D space vectors.
+This Vector has an homogenous parameter which is always zero.
+
+An object is contructed from two Vertex 'orig' and 'dest'.
+Our vector represents the vector between this two points;
+For creation:
+new Vector( array( 'orig' => $vector1, 'dest' => $vector2 ) );
+
+You can not supply 'orig' Vertex, if you do not supply it, the orig Vertex will be created
+that way:
+
+$orig = new Vertex( array('x' => 0, 'y' => 0, 'z' => 0, 'w' => 1) );
+
+Vector's public methods:
+- float magnitude() : returns the vector’s length (or "norm").
+- Vector normalize() : returns a normalized version of the vector. If the vector is already normalized, returns a fresh copy of the vector.
+- Vector add( Vector $rhs ) : returns the sum vector of both vectors.
+- Vector sub( Vector $rhs ) : returns the difference vector of both vectors.
+- Vector opposite() : returns the opposite vector.
+- Vector scalarProduct( $k ) : returns the multiplication of the vector with a scalar.
+- float dotProduct( Vector $rhs ) : returns the scalar multiplication of both vec- tors.
+- float cos( Vector $rhs ) : returns the angle’sAppendix cosine between both vec- tors.
+- Vector crossProduct( Vector $rhs ) : returns the cross multiplication of both vectors (right-hand mark!)
+
+It also has 4 methods to get values x y z and w
+Int get_x() ... _y, _z, _w
+---------------------------------------------------------------------- Vector ->
