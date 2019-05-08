@@ -1,6 +1,6 @@
 <?php
 class Color{
-	public static $verbose = false;
+	static $verbose = false;
 	public $red;
 	public $green;
 	public $blue;
