@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		#baloon{
+			width:200px;
+			height:200px;
+			background-color: red;
+			border-radius: 50%;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="baloon" onclick="myFunction(this)"></div>
+		<script>
+			function myFunction(id) {
+				var i = 0;
+				if (i == 0){
+					id.style.background = "green";
+					i = 1;
+				}
+				else if (i == 1){
+					id.style.background = "blue";
+					i = 2;
+				}
+				else if (i == 2){
+					id.style.background = "red";
+					i = 0;
+				}
+			}
+		</script>
+	</body>
+</html>
