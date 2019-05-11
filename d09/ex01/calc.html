@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<style>
+			form{
+				padding-left: 900px;
+				padding-top: 500px;
+			}
+			.typein{
+				height: 50px;
+				width: 150px;
+				font-size: 1vw;
+			}
+			#Operators{
+				height: 50px;
+				width: 150px;
+				font-size: 1vw;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+		<input type="text" name="leftPart" value="" class="typein" id="left"/>
+		<select name="operators" id="Operators">
+			<option disabled> Choose an operation</option>
+			<option selected value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" name="rightPart" value="" class="typein" id="right"/>
+		<input type="submit" name="submit" value="Try me!" onclick="calculate()" class="typein"/>
+		</form>
+
+		<script>
+				window.setInterval(function alertFunction(){alert("Please, use me...")}, 30000);
+				
+				function calculate(){
+					var op = document.getElementById("Operators").value;
+					var l = document.getElementById("left").value;
+					var r = document.getElementById("right").value;
+
+					if (isNaN(l) || isNaN(r) || parseInt(l) < 0 || parseInt(r) < 0) {
+						alert("Error :(");
+						console.log("Error :(");
+					}
+					else if ((op == '%' || op == '/') && parseInt(r) == 0){
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+					}
+					else {
+						var result = eval(l + op + r);
+						alert(result);
+						console.log(result);
+					}
+				}
+		</script>
+	</body>
+</html>
