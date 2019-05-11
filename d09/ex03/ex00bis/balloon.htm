@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Baloon</title>
+		<style>
+		#balloon{
+			width:200px;
+			height:200px;
+			background-color: red;
+			border-radius: 50%;
+		}
+	</style>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous">
+	</script>
+	</head>
+	<body>
+		<div id="balloon"></div>
+		<script>
+			var i;
+			var j;
+			var colors = ['red', 'green', 'blue'];
+
+			$("#balloon").click(function(){
+				if (typeof i == 'undefined')
+					i = 0;
+				if (++i < 3)
+					$('#balloon').css('background-color', colors[i]);
+				else{
+					i = 0;
+					$('#balloon').css('background-color', colors[i]);
+				}
+				if ($("#balloon").width() < 420)
+				{
+					var width = $("#balloon").width();
+					var height = $("#balloon").height();
+					width += 10;
+					height += 10;
+					$("#balloon").width(width).height(height);
+				}
+				else
+					$("#balloon").width(200).height(200);
+			});
+
+			$("#balloon").mouseleave(function(){
+				if ($("#balloon").width() > 200)
+				{
+					var width = $("#balloon").width();
+					var height = $("#balloon").height();
+					width -= 5;
+					height -= 5;
+					$("#balloon").width(width).height(height);
+				}
+				if (--i >= 0)
+					$('#balloon').css('background-color', colors[i]);
+				else{
+					i = 2;
+					$('#balloon').css('background-color', colors[i]);
+				}
+			});
+		</script>
+	</body>
+</html>
